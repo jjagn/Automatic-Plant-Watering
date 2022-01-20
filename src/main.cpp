@@ -1,16 +1,23 @@
 #include <Arduino.h>
-#define DEBUG
+#include "debug.h"
 
-#ifdef DEBUG
+const int input = A0;
+int reading;
 
-#endif
+// bone dry is 1023
+// dry soil around ~600-700
+// just watered is ~250-400
+
 
 void setup() {
-  // put your setup code here, to run once:
-
-  const int input = A0;
+    // put your setup code here, to run once:
+    initSerial();
+    debug("initialisation complete");
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+  reading = analogRead(input);
+  debug("Current reading:");
+  debugln(reading);
 }
