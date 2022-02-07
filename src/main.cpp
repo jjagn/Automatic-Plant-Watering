@@ -74,7 +74,7 @@ void loop() {
         lcd.println("%");
         delay(3000);
         lcd.clear();
-        lcd.noDisplay();
+        lcd.noDisplay(); 
         state = IDLE;
         break;
   }
